@@ -2,15 +2,18 @@
   <table class='table tabled-striped'>
     <tr>
       <th>Name</th>
+      <th>Items</th>
       <th>Created</th>
-      <th colspan='2'>Action</th>
+      <th colspan='3'>Action</th>
     </tr>
     <%@reports.each do |report|%>
       <tr>
         <td><%=report.name%></td>
+        <td><%=report.items.size%></td>
         <td><%=report.created_at%></td>
         <td><%=link_to "Show",report_path(report),{target:'_blank'}%></td>
         <td><%=link_to "Pdf",export_pdf_reports_path(report)%></td>
+        <td><%=link_to "Delete",report_path(report),method:'DELETE'%></td>
       </tr>
     <%end%>
   </table>

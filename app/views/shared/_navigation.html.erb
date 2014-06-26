@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -11,8 +11,8 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/inventory" data-no-turbolink>Uploader</a></li>
-        <li><a href="/reports">Reports</a></li>
+        <li class='<%=params[:controller] == "inventory" ? "active" : ""%>'><a href="/inventory" data-no-turbolink>Uploader</a></li>
+        <li class='<%=params[:controller] == "reports" ? "active" : ""%>'><a href="/reports">Reports</a></li>
         <li><a href="<%=inventory_path('item')%>">Items</a></li>
         <li><a href="<%=inventory_path('style')%>">Styles</a></li>
       </ul>

@@ -10,6 +10,13 @@ class ReportsController < ApplicationController
     @style_items = Style.includes(:items).joins(:items).where("items.id in (?)",ids).order(:type)
   end
 
+  def destroy
+    report = Report.find(params[:id])
+    report.destroy if report
+    flash[:notice] = "Deleted report successfully."
+    redirect_to action: :index
+  end
+
   def export_pdf
     report       = Report.find(params[:id])
     ids          = Item.select('id').where("report_id = ?",params[:id])

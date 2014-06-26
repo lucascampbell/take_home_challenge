@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :inventory
 
-  resources :reports, only:['index','show'] do
+  resources :reports, only:['index','show','destroy'] do
     collection do 
       get 'export_pdf/:id',  to:'reports#export_pdf', constraints: { format: 'pdf' }, as: :export_pdf
       post 'upload'
