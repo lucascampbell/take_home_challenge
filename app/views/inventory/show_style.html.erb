@@ -1,0 +1,20 @@
+<div class='row'>
+  <table class='table tabled-striped'>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+      <th>wholesale price</th>
+      <th>retail price</th>
+    </tr>
+    <%@styles.each do |style|%>
+    <tr>
+      <td><%=style.id%></td>
+      <td><%=style.name%></td>
+      <td><%=style.type%></td>
+      <td><%=style.wholesale_price%></td>
+      <td><%=style.retail_price%></td>
+    </tr>
+    <%end%>
+  </table>
+</div>

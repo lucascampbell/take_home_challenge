@@ -1,0 +1,17 @@
+<div class='row'>
+  <table class='table tabled-striped'>
+    <tr>
+      <th>Name</th>
+      <th>Created</th>
+      <th colspan='2'>Action</th>
+    </tr>
+    <%@reports.each do |report|%>
+      <tr>
+        <td><%=report.name%></td>
+        <td><%=report.created_at%></td>
+        <td><%=link_to "Show",report_path(report),{target:'_blank'}%></td>
+        <td><%=link_to "Pdf",export_pdf_reports_path(report)%></td>
+      </tr>
+    <%end%>
+  </table>
+</div>
