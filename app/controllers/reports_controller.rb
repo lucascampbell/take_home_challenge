@@ -33,12 +33,12 @@ class ReportsController < ApplicationController
     send_file save_path, :type => 'application/pdf', :disposition => 'attachment' 
   end
 
-   def upload
+  def upload
     begin
-      Report.consume_csv(params[:file])
+      res = Report.consume_csv(params[:file])
     rescue Exception => e 
       puts "Exception: #{e.message}"
     end
-    render :json => {text:'success'}
+    render :json => {text:res}
   end
 end

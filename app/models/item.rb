@@ -13,8 +13,8 @@ class Item < ActiveRecord::Base
   validates :color, presence: true
   validates :status, inclusion: {in: ITEM_STATUS}
 
-  def self.clearanced(ids)
-    where("id IN (?) and status != ?",ids,'sold')
+  def self.sellable(ids)
+    where("id IN (?) and status = ?",ids,'sellable')
   end
 
   def clearance_price

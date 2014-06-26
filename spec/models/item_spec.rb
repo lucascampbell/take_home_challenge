@@ -10,7 +10,7 @@ describe Item do
   
   it "should no include sold status" do
     ids = Item.all.pluck(:id)
-    expect(Item.clearanced(ids).pluck(:status).include?('sold')).to equal(false)
+    expect(Item.sellable(ids).pluck(:status).include?('sold')).to equal(false)
   end
 
   it "should return clearance price for item" do 
