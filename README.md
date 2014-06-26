@@ -5,7 +5,6 @@
 ## Setup
   To get started clone this repo and fun the following commands:
 
-    ```
     gem install foreman
     bundle install
     rake db:setup
