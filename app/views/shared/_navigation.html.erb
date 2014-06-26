@@ -13,8 +13,10 @@
       <ul class="nav navbar-nav">
         <li class='<%=params[:controller] == "inventory" ? "active" : ""%>'><a href="/inventory" data-no-turbolink>Uploader</a></li>
         <li class='<%=params[:controller] == "reports" ? "active" : ""%>'><a href="/reports">Reports</a></li>
-        <li><a href="<%=inventory_path('item')%>">Items</a></li>
-        <li><a href="<%=inventory_path('style')%>">Styles</a></li>
+        <%if ENV['DEBUG_ITEMS'] %>
+          <li><a href="<%=inventory_path('item')%>">Items</a></li>
+          <li><a href="<%=inventory_path('style')%>">Styles</a></li>
+        <%end%>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
