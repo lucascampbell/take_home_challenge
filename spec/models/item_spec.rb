@@ -7,6 +7,11 @@ describe Item do
     @item.update_attributes({price_sold:nil,sold_at:nil})
     @item.reload
   end
+
+  it "should not create item with bad status" do 
+    item = Item.create({size:'medium',color:'blue',status:'bad'})
+    expect(item.errors[:status].first).to eq('is not included in the list')
+  end
   
   it "should no include sold status" do
     ids = Item.all.pluck(:id)

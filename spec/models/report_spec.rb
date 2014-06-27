@@ -29,6 +29,7 @@ describe Report do
   it "should fail to update item if already sold" do
     res = @item.update_attributes(status:'sold')
     expect(@item.status).to eq('sold')
+    expect(Report.count).to eq(0)
 
     file = File.new('test_csv.csv')
     Report.consume_csv(file)
@@ -36,6 +37,7 @@ describe Report do
 
     expect(@item.status).to eq('sold')
     expect(@item.price_sold).to be_nil
+    expect(Report.count).to eq(0)
   end
     
 end
