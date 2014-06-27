@@ -30,8 +30,6 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end         
 
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
-
 
 group :development, :test do
   gem 'spring' 

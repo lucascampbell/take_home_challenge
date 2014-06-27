@@ -5,6 +5,8 @@ default: &default
   database:   thc_development
   pool:       25
   host:       localhost
+  username:  postgres
+  password:  
 
 development:
   <<: *default
